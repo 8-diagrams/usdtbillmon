@@ -53,7 +53,7 @@ AUTO_INCREMENT=307639
 
 CREATE TABLE `useraddrs` (
         `id` INT(11) NOT NULL AUTO_INCREMENT,
-        `tg_id` INT(11) NOT NULL,
+        `tg_id` BIGINT NOT NULL,
         `addr` VARCHAR(64) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
         `tag` VARCHAR(64) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
         `add_time` TIMESTAMP(6) NULL DEFAULT NULL,
