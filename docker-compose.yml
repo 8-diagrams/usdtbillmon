@@ -26,6 +26,7 @@ services:
     
   db_usdt:
     image: mysql:5.7
+    container_name: db_usdt
     volumes:
      - ./db:/var/lib/mysql
      - ./mysql_init:/docker-entrypoint-initdb.d/
