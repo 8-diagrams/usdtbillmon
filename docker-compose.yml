@@ -3,6 +3,7 @@ services:
   teletrx:
     depends_on:
      - redis_server_usdt
+     - db_usdt
     image: huiwushi/teletrx:latest 
     container_name: teleusdt
     volumes:
