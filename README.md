@@ -12,12 +12,16 @@ git clone https://github.com/8-diagrams/usdtbillmon.git
 
 你最终要准备的目录内容是这样的
 
+`
+
 ├── docker-compose.yml
 ├── env.conf
 ├── key.data
 ├── mysql_init
 │   └── ct_table.sql
 └── redis.conf
+
+`
 
 你需要修改  
 
