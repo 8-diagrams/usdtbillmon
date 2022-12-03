@@ -31,9 +31,9 @@ ENGINE=InnoDB
 
 CREATE TABLE `trans` (
         `id` INT(11) NOT NULL AUTO_INCREMENT,
-        `hashid` VARCHAR(64) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
-        `addr` VARCHAR(64) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
-        `token` VARCHAR(64) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+        `hashid` VARCHAR(128) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+        `addr` VARCHAR(128) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+        `token` VARCHAR(128) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
         `peer_addr` VARCHAR(64) NOT NULL COLLATE 'utf8mb4_general_ci',
         `trans_time` TIMESTAMP(6) NULL DEFAULT NULL,
         `trans_time_ts` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',

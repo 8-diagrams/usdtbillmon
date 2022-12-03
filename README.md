@@ -36,3 +36,10 @@ docker-compose up -d
 
 /start  开始接收收款监听
 
+
+修改了一些bug：
+ 
+- 同一秒有问题的bug
+
+
+
