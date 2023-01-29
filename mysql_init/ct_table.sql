@@ -39,6 +39,7 @@ CREATE TABLE `trans` (
         `trans_time_ts` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
         `balance` DECIMAL(20,8) NOT NULL DEFAULT '0.00000000',
         `amount` DECIMAL(20,8) NOT NULL DEFAULT '0.00000000',
+        `peer_addr_belong_team` VARCHAR(64)  NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
         PRIMARY KEY (`id`) USING BTREE,
         UNIQUE INDEX `hashid` (`addr`, `hashid`) USING BTREE,
         INDEX `addr` (`addr`) USING BTREE,
@@ -62,6 +63,21 @@ CREATE TABLE `useraddrs` (
         UNIQUE INDEX `addr` (`tg_id`, `addr`) USING BTREE,
         INDEX `tg_id` (`tg_id`) USING BTREE,
         INDEX `addr_sg` (`addr`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=19
+;
+
+create table `addrtags` (
+        `id` INT(11) NOT NULL AUTO_INCREMENT,
+        `addr` VARCHAR(64) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+        `addr_candidate_name` VARCHAR(64) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+        `add_time` TIMESTAMP(6) NULL DEFAULT NULL,
+        `add_time_ts` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+        PRIMARY KEY (`id`) USING BTREE,
+        UNIQUE INDEX `addr_can` (`addr`, `addr_candidate_name`) USING BTREE,
+        INDEX `addr` (`addr`) USING BTREE
 )
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB

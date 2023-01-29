@@ -1,0 +1,12 @@
+dnspython
+PyJWT==1.4.0
+flask_sqlalchemy
+flask
+requests
+pymysql
+waitress
+python-dateutil
+lxml
+bs4
+pycrypto
+psutil
