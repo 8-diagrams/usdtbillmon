@@ -1,6 +1,6 @@
 version: '3'
 services:
-  teletrx:
+  teleusdt:
     depends_on:
      - redis_server_usdt
      - db_usdt
@@ -10,7 +10,7 @@ services:
      - ./key.data:/root/svr/telesvr/key.data:rw
      - ./env.conf:/root/svr/telesvr/env.conf:rw
     ports:
-     - "1099:8232"
+     - "2099:8232"
     restart: always
     environment:
      REDIS_NAME: redis_server_usdt
@@ -36,3 +36,18 @@ services:
       MYSQL_DATABASE: trx 
       MYSQL_USER: mytest
       MYSQL_PASSWORD: zhujiXYZ1254 
+
+  nginx_usdt:
+    depends_on:
+     - teleusdt
+    container_name: nginx_usdt
+    image: nginx
+    restart: always
+    ports:
+      - 3001:80
+      - 3443:443
+    privileged: true
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html:/usr/share/nginx/html
+      - ./logs:/var/log/nginx
