@@ -4,7 +4,7 @@ services:
     depends_on:
      - redis_server_usdt
      - db_usdt
-    image: huiwushi/teletrx:latest 
+    image: huiwushi/telewebusdt:latest 
     container_name: teleusdt
     volumes:
      - ./key.data:/root/svr/telesvr/key.data:rw
